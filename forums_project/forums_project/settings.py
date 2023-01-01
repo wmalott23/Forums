@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'topic',
     'user',
+    'subject',
+    'thread',
+    'emojis',
+    'comment',
+    'comment_emoji',
 ]
 
 MIDDLEWARE = [
