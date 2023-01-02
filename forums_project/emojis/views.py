@@ -4,14 +4,14 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .serializer import EmojiSerializer
-from .models import Emoji
+from .models import Emojis
 
 # Create your views here.
 
 @api_view(['GET', 'POST'])
 def emoji_list(request):
     if request.method == 'GET':
-        emojis = Emoji.objects.all()
+        emojis = Emojis.objects.all()
         serializers = EmojiSerializer(emojis, many=True)
         return Response(serializers.data)
     elif request.method == 'POST':
@@ -22,7 +22,7 @@ def emoji_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def emoji_detail(request, pk):
-    emoji = get_object_or_404(Emoji, pk=pk)
+    emoji = get_object_or_404(Emojis, pk=pk)
     if request.method == 'GET':
         serializer = EmojiSerializer(emoji)
         return Response(serializer.data)

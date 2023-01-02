@@ -21,4 +21,8 @@ urlpatterns = [
     path('api/topic/', include('topic.urls')),
     path('api/user/', include('user.urls')),
     path('api/subject/', include('subject.urls')),
+    path('api/thread/', include('thread.urls')),
+    path('api/comment/', include('comment.urls')),
+    path('api/emojis/', include('emojis.urls')),
+    path('api/comment_emoji/', include('comment_emoji.urls')),
 ]

@@ -5,4 +5,4 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=10),
     status = models.CharField(max_length=10),
-    Icon = models.CharField(max_length=255)
+    icon = models.CharField(max_length=255)

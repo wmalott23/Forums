@@ -1,6 +1,6 @@
 from django.db import models
-from .models import Thread
-from .models import User
+from thread.models import Thread
+from user.models import User
 
 # Create your models here.
 

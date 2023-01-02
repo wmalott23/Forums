@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Emoji
+from .models import Emojis
 
 class EmojiSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Emoji,
+        model = Emojis,
         fields = ['id', 'name', 'icon']

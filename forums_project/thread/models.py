@@ -1,6 +1,6 @@
 from django.db import models
-from .models import Subject
-from .models import User
+from subject.models import Subject
+from user.models import User
 
 # Create your models here.
 
