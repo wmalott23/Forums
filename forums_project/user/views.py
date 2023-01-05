@@ -3,31 +3,31 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .serializer import UserSerializer
-from .models import User
+from .serializer import UserInfoSerializer
+from .models import UserInfo
 
 # Create your views here.
 
 @api_view(['GET', 'POST '])
-def user_list(request):
+def user_info_list(request):
     if request.method == 'GET':
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        users = UserInfo.objects.all()
+        serializer = UserInfoSerializer(users, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        serializer = UserSerializer(data=request.data)
+        serializer = UserInfoSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def user_detail(request, pk):
-    user = get_object_or_404(User, pk=pk)
+def user_info_detail(request, pk):
+    user = get_object_or_404(UserInfo, pk=pk)
     if request.method == 'GET':
-        serializer = UserSerializer(user)
+        serializer = UserInfoSerializer(user)
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = UserSerializer(user, data=request.data)
+        serializer = UserInfoSerializer(user, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)

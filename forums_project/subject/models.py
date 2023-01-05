@@ -1,6 +1,6 @@
 from django.db import models
 from topic.models import Topic
-from user.models import User
+from user.models import UserInfo
 
 # Create your models here.
 
@@ -9,4 +9,4 @@ class Subject(models.Model):
     title = models.CharField(max_length=(30))
     description = models.CharField(max_length=(255))
     image = models.CharField(max_length=(255))
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_info = models.ForeignKey(UserInfo, on_delete=models.CASCADE)

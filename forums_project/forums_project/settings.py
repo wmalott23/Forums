@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'emojis',
     'comment',
     'comment_emoji',
+    'api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
